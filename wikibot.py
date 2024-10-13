@@ -1,11 +1,15 @@
 import click
 from mylib.bot import scrape
 
+
 @click.command()
-@click.option('--name', prompt='Wikipedia page to scrape', help='Web page we want to scrape')
+@click.option(
+    "--name", prompt="Wikipedia page to scrape", help="Web page we want to scrape"
+)
 def cli(name):
     result = scrape(name)
-    click.echo(click.style(f'{result}:' , fg='blue'))
+    click.echo(click.style(f"{result}:", fg="blue"))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     cli()
